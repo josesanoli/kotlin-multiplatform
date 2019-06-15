@@ -1,0 +1,4 @@
+include ':sharedNative'
+include ':app'
+
+enableFeaturePreview('GRADLE_METADATA')

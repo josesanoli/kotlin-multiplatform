@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  KotlinNativeIOSExample
+//
+//  Created by Jose Sanchez Olivero on 30/05/2019.
+//  Copyright © 2019 Jose Sanchez Olivero. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+FRAMEWORK_SEARCH_PATHS = $(inherited) $SRCROOT/../../kotlin_native/sharedNative/build/xcode-frameworks
