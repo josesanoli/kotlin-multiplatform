@@ -7,6 +7,8 @@ import android.view.View
 import com.example.sharedNative.*
 import drawer.example.com.kotlinnative.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.serialization.json.Json
+import com.example.sharedNative.StringCheckData
 
 class MainActivity: AppCompatActivity(), PresenterInterface {
 
@@ -32,8 +34,18 @@ class MainActivity: AppCompatActivity(), PresenterInterface {
 
         }
         val test = SerializableClass("User name", 1234)
-        Log.d("splash", test.toJsonString())
-        Log.d("splash", MainPresenter().toData("{\"user\":\"jose\",\"number\":1234,\"numbr\":1}").toString())
+        Log.d("MainActivity", test.toJsonString())
+        Log.d("MainActivity", MainPresenter().toData("{\"user\":\"jose\",\"number\":1234,\"numbr\":1}").toString())
+
+
+        val original = StringCheckData(CheckedData("my data", byteArrayOf(42, 32)))
+        //val s = Json.nonstrict.stringify(StringCheckData.serializer(), original)
+
+        val jsonString = "{\"data\":{\"data\":\"my data\",\"checkSum\":\"2A20\"}}"
+        val restored = Json.nonstrict.parse(StringCheckData.serializer(), jsonString)
+
+
+        Log.d("MainActivity", restored.toString())
 
     }
 
