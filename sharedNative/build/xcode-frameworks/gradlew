@@ -1,4 +1,0 @@
-#!/bin/bash
-export 'JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home'
-cd '/Users/jose.sanchez.olivero/Documents/proyects/kotlin-multiplatform-test'
-./gradlew $@
